@@ -1,0 +1,46 @@
+{
+  "name": "calculadora-risco-cardiovascular",
+  "version": "1.0.0",
+  "description": "Calculadora de risco cardiovascular baseada no Escore de Risco Global (ERG-SBC)",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server .",
+    "build": "echo 'Projeto estático - sem build necessário'",
+    "test": "echo 'Testes não implementados ainda'",
+    "deploy": "gh-pages -d .",
+    "validate": "npx html-validate index.html"
+  },
+  "keywords": [
+    "cardiovascular",
+    "risco",
+    "saude",
+    "erg",
+    "sbc",
+    "calculadora",
+    "medicina",
+    "prevencao"
+  ],
+  "author": "Seu Nome <seuemail@exemplo.com>",
+  "license": "MIT",
+  "homepage": "https://seuusuario.github.io/calculadora-risco-cardiovascular",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seuusuario/calculadora-risco-cardiovascular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seuusuario/calculadora-risco-cardiovascular/issues"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "html-validate": "^8.11.1",
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

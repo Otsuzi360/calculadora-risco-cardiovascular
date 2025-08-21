@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Risco Cardiovascular - Análise Completa</title>
+    <meta name="description" content="Calculadora de risco cardiovascular baseada no Escore de Risco Global (ERG-SBC). Avalie seu risco de infarto e AVC em 10 anos.">
+    <meta name="keywords" content="risco cardiovascular, calculadora, coração, infarto, AVC, ERG, SBC">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Risco Cardiovascular</h1>
+        <p class="subtitle">Análise Completa baseada no Escore de Risco Global (ERG-SBC)</p>
+        
+        <div class="disclaimer">
+            <strong style="display: block; margin-bottom: 8px;">Como esta calculadora funciona?</strong>
+            <p style="margin: 0; line-height: 1.6;">
+                Esta ferramenta utiliza o <strong>Escore de Risco Global (ERG)</strong>, um dos cálculos mais estabelecidos e utilizados por médicos para estimar a probabilidade de um evento cardiovascular grave (como infarto ou AVC) nos próximos <strong>10 anos</strong>. <br><br>
+                Diferente de uma análise isolada, o escore calcula o <strong>impacto combinado</strong> de múltiplos fatores essenciais: sua idade, sexo, níveis de colesterol, pressão arterial, diabetes e tabagismo. <br><br>
+                O resultado é um ponto de partida para criar um plano de prevenção eficaz e entender o peso de cada hábito na saúde do seu coração. Lembre-se, esta ferramenta é educacional e <strong>não substitui uma consulta e avaliação médica completa.</strong>
+            </p>
+        </div>
+
+        <form id="calcForm">
+            <div class="form-section">
+                <h3>Informações Básicas</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                         <label>Sexo Biológico <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="sexoM" name="sexo" value="M" required>
+                                 <label for="sexoM">Masculino</label>
+                            </div>
+                            <div class="radio-option">
+                                 <input type="radio" id="sexoF" name="sexo" value="F" required>
+                                <label for="sexoF">Feminino</label>
+                            </div>
+                         </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="idade">Idade <span class="required">*</span></label>
+                         <input type="number" id="idade" name="idade" min="30" max="80" required placeholder="30-80 anos">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                 <h3>Exames Laboratoriais</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="colesterol">Colesterol Total (mg/dL) <span class="required">*</span></label>
+                        <input type="number" id="colesterol" name="colesterol" min="100" max="400" required placeholder="Ideal: 180">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hdl">HDL - Colesterol Bom (mg/dL) <span class="required">*</span></label>
+                         <input type="number" id="hdl" name="hdl" min="20" max="100" required placeholder="Ideal: 60">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Usa medicamento para colesterol (estatina)?</label>
+                         <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="estatinaSim" name="estatina" value="sim">
+                                 <label for="estatinaSim">Sim</label>
+                            </div>
+                            <div class="radio-option">
+                                 <input type="radio" id="estatinaNao" name="estatina" value="nao" checked>
+                                <label for="estatinaNao">Não</label>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Pressão Arterial</h3>
+                <div class="form-grid">
+                   <div class="form-group">
+                        <label for="pas">Pressão Sistólica (número maior) <span class="required">*</span></label>
+                        <input type="number" id="pas" name="pas" min="90" max="200" placeholder="Ideal: 110" required>
+                    </div>
+                     
+                    <div class="form-group">
+                        <label>Usa medicamento para pressão?</label>
+                        <div class="radio-group">
+                             <div class="radio-option">
+                                <input type="radio" id="pressaoSim" name="medicoPressao" value="sim">
+                                <label for="pressaoSim">Sim</label>
+                             </div>
+                            <div class="radio-option">
+                                <input type="radio" id="pressaoNao" name="medicoPressao" value="nao" checked>
+                                 <label for="pressaoNao">Não</label>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Fatores de Risco</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                         <label>É fumante atualmente?</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="fumanteSim" name="fumante" value="sim">
+                                <label for="fumanteSim">Sim</label>
+                            </div>
+                            <div class="radio-option">
+                                 <input type="radio" id="fumanteNao" name="fumante" value="nao" checked>
+                                <label for="fumanteNao">Não</label>
+                            </div>
+                         </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Tem diabetes?</label>
+                         <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="diabetesSim" name="diabetes" value="sim">
+                                 <label for="diabetesSim">Sim</label>
+                            </div>
+                            <div class="radio-option">
+                                 <input type="radio" id="diabetesNao" name="diabetes" value="nao" checked>
+                                <label for="diabetesNao">Não</label>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-calculate">Calcular Risco Cardiovascular</button>
+        </form>
+
+        <div id="results" class="results">
+            <div class="main-risk-comparison">
+                <h2>Seu Risco Cardiovascular em 10 Anos</h2>
+                
+                <div class="risk-display">
+                    <div class="risk-box">
+                         <div class="risk-label">Perfil Ideal</div>
+                        <div class="risk-percentage risk-ideal" id="riscoIdeal">--</div>
+                        <div style="color: #00A896; font-size: 0.9em;">Perfil Ouro</div>
+                    </div>
+                    
+                    <div class="risk-box highlight">
+                        <div class="risk-label">Seu Risco Atual</div>
+                         <div class="risk-percentage risk-actual" id="riscoReal">--</div>
+                        <div style="color: #FF6F61; font-size: 0.9em;">Calculado</div>
+                    </div>
+                </div>
+                
+                <div class="risk-comparison-text" id="riskComparison">
+                 </div>
+            </div>
+
+            <div class="secondary-info">
+                <div class="info-card">
+                    <div class="info-card-label">Idade do Coração</div>
+                     <div class="info-card-value idade-coracao-value" id="idadeCoracao">--</div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-label">Sua Idade</div>
+                     <div class="info-card-value" id="idadeCrono">--</div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-label">Pontuação Total</div>
+                    <div class="info-card-value" id="pontuacaoTotal">--</div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-card-label">Pontuação Ideal</div>
+                    <div class="info-card-value" style="color: #00A896;" id="pontuacaoIdeal">--</div>
+                 </div>
+            </div>
+
+            <div class="detailed-analysis">
+                <h3>Análise Detalhada por Fator de Risco</h3>
+                <table class="analysis-table">
+                     <thead>
+                        <tr>
+                            <th>Fator de Risco</th>
+                            <th>Seu Valor</th>
+                             <th>Valor Ideal</th>
+                            <th style="text-align: center;">Seus Pontos</th>
+                            <th style="text-align: center;">Pontos Ideais</th>
+                             <th style="text-align: center;">Diferença</th>
+                        </tr>
+                    </thead>
+                    <tbody id="analysisBody">
+                     </tbody>
+                    <tfoot>
+                        <tr class="total-row">
+                             <td>PONTUAÇÃO TOTAL</td>
+                            <td colspan="2"></td>
+                            <td style="text-align: center;" id="totalPontosTabela">--</td>
+                            <td style="text-align: center;" id="totalIdealTabela">--</td>
+                             <td style="text-align: center;" id="totalDiferencaTabela">--</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+             <div class="visual-comparison">
+                <h3>Comparação Visual dos Riscos</h3>
+                <div class="bar-chart">
+                    <div class="bar-wrapper">
+                         <div class="bar ideal" id="barIdeal">
+                            <span class="bar-value" id="barIdealValue">--</span>
+                        </div>
+                        <div class="bar-label">Risco Ideal<br>(Perfil Ouro)</div>
+                     </div>
+                    <div class="bar-wrapper">
+                        <div class="bar actual" id="barActual">
+                            <span class="bar-value" id="barActualValue">--</span>
+                         </div>
+                        <div class="bar-label">Seu Risco<br>(Atual)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h3>Recomendações Personalizadas</h3>
+                <ul id="recomList"></ul>
+            </div>
+
+            <div class="cta-saude360">
+                <h3>Dê o Próximo Passo Para Uma Vida Mais Longa e Saudável</h3>
+                <p class="cta-subtitle">Seu resultado mostrou pontos a melhorar? O programa <strong>Saúde 360°</strong> foi desenhado por especialistas para reduzir seu risco cardiovascular de forma definitiva.</p>
+                
+                <div class="cta-benefits">
+                    <div>✔️ <strong>Acesso Gratuito por 30 Dias.</strong> Sem compromisso.</div>
+                    <div>✔️ <strong>Estenda o benefício para até 3 pessoas</strong> que você ama.</div>
+                     <div>✔️ Método validado para controlar pressão, colesterol e outros fatores de risco.</div>
+                </div>
+    
+                <a href="https://pay.hotmart.com/I100853978Y?off=tw0hvvqj&checkoutMode=10" target="_blank" class="cta-button-main">
+                    Iniciar Meus 30 Dias Grátis Agora
+                    <small>Vagas limitadas para a oferta gratuita</small>
+                </a>
+             </div>
+        </div>
+    </div>
+
+    <script src="js/tables.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/calculator.js"></script>
+</body>
+</html>
